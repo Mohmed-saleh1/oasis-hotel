@@ -10,13 +10,19 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/lovable-uploads/hero-beach-kendwa.jpg')` }}
-      >
-        <div className="absolute inset-0 bg-charcoal/40" />
-      </div>
+      <picture className="absolute inset-0 block">
+        <source type="image/webp" srcSet="/lovable-uploads/hero-beach-kendwa.webp" />
+        <img
+          src="/lovable-uploads/hero-beach-kendwa.jpg"
+          alt=""
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+      </picture>
+      <div className="absolute inset-0 bg-charcoal/40 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
